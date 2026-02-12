@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>A Question For You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <!-- Quiz Card -->
+  <div class="card">
+    <h1 id="question">Question goes here</h1>
+    <div id="answers" class="answers"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+  (function () {
+    emailjs.init("nsNu7SPEt8L5RsUEy");
+  })();
+  </script>
+</body>
+</html>
