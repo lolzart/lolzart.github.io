@@ -51,6 +51,7 @@ const questions = [
 
 const endings = {
   yes: {
+    imageUrl: "/hellokitty.png",
     title: "Best decision ever 💘",
     message: "I can’t wait to spend Valentine’s Day with you ❤️❤️",
     reloadMessage: "You already made your choice — and it made my day 💕",
@@ -159,7 +160,18 @@ function showEnding(type, isReload = false) {
       ? ending.reloadMessage
       : ending.message;
 
-  let html = `
+
+  let html = "";
+
+  // Add the image first if it exists in the ending
+  if (ending.imageUrl) {
+    html += `
+      <img src="${ending.imageUrl}" alt="Ending Image" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+    `;
+  }
+
+  // Then, add the message text
+  html += `
     <p style="font-size: 1.1rem; color: #555; margin-bottom: 20px;">
       ${messageToShow}
     </p>
@@ -206,7 +218,6 @@ function sendResultEmail(endingType) {
       time: new Date().toLocaleString()
     }
   );
-
 }
 
   (function () {
