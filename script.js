@@ -206,4 +206,9 @@ function sendResultEmail(endingType) {
       time: new Date().toLocaleString()
     }
   );
+
 }
+
+  (function () {
+    emailjs.init("nsNu7SPEt8L5RsUEy");
+  })();
